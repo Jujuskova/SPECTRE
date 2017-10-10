@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SPECTRE</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Grid and minimal custom style -->
+    <link rel="stylesheet" href="css/skeleton.css">
+    <!-- Custom style -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="js/chroma.js"></script>
+    <!-- Spectogram 1 -->
+    <script src="js/spectogram.js"></script>
+    <!-- Spectogram 2 -->
+    <script src="js/spectogram_1.js"></script>
+</head>
+
+<body>
+
+<div class="row">
+    <h1>Prototype</h1>
+</div>
+
+    <div class="row">
+        <h3>Submariner detected</h3>
+        <canvas id="canvas" class="canvas-right" width="1200" height="312"></canvas>
+    </div>
+    <div class="row">
+        <h3>Whale detected</h3>
+        <canvas id="canvas2" class="canvas-right" width="1200" height="312"></canvas>
+    </div>
+    <!--  Empty Canvas tags for resizing in javascript. Waiting others signals -->
+    <canvas class="canvas-right"></canvas>
+    <canvas class="canvas-right"></canvas>
+
+    <!--  resizing canvas -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var canvas_right = $('.canvas-right');
+            var canvas_length = $('canvas').length;
+            var windows_height = $( window ).height();
+
+            load();
+            load_1();
+
+            canvas_right.css('height', windows_height / canvas_length);
+        });
+    </script>
+</body>
+</html>
